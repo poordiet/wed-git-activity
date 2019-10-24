@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Class Sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Course</th>
+      <th>Professor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @class_sections.each do |class_section| %>
+      <tr>
+        <td><%= class_section.number %></td>
+        <td><%= class_section.course_id %></td>
+        <td><%= class_section.professor_id %></td>
+        <td><%= link_to 'Show', class_section %></td>
+        <td><%= link_to 'Edit', edit_class_section_path(class_section) %></td>
+        <td><%= link_to 'Destroy', class_section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Class Section', new_class_section_path %>
